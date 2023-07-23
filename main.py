@@ -11,8 +11,9 @@ def print_me(me: str):
 # Define a route for the home page
 @app.route('/')
 def hello_world():
-    print("Hello, World!")
+    print("1 -Hello, World!")
     job_that_executes_once()
+    print("2 - Hello, World!")
     return 'Hello, World!'
 
 
