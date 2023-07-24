@@ -2,10 +2,11 @@ import threading
 import time
 import schedule
 from flask import Flask
+from views import views_blueprint
 
 # Create a Flask app
 app = Flask(__name__)
-import views
+app.register_blueprint(views_blueprint)
 
 # Function to run the scheduler in a separate thread
 def run_scheduler():

@@ -8,7 +8,7 @@ After that, the messages is stored & sent when its time comes via a http request
 pip install -r requirements.txt
 ```
 ```
-python main.py
+python app.py
 ```
 
 # PR:
