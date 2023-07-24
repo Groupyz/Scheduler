@@ -2,6 +2,14 @@
 This service recives a Message via RESTful API.
 After that, the messages is stored & sent when its time comes via a http request.</br></br>
 
+# Run App:
+## Local Machine:
+```
+pip install -r requirements.txt
+```
+```
+python main.py
+```
 
 # PR:
 ## Template:
