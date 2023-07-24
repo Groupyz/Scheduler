@@ -1,6 +1,6 @@
 # Description of this Service:
 This service recives a Message via RESTful API.
-After that, the messages is stored & sent when its time comes via a http request.
+After that, the messages is stored & sent when its time comes via a http request.</br></br>
 
 
 # PR:
@@ -14,7 +14,13 @@ After that, the messages is stored & sent when its time comes via a http request
 - Solution: "Add this sections to the reademe of the repo."
 - Impact: "Change will only effect the readme file."
 - Testing plan: "No need for testing."
-
+</br></br>
+# Tests:
+## Local (CLI):
+```
+python -m pytest
+```
+</br></br>
 # Related:
 
 - [moqups](https://app.moqups.com/l5FtMh4Pi7L2R7STWPynF3ShjU3UN90E/edit/page/a276610b3)
