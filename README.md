@@ -1,7 +1,3 @@
-<!-- Description -->
-<!-- thie service recives messages via Rest requests  -->
-<!-- & sends them to the relavent service by thier given time  -->
-<!-- PR template -->
 # Description of this Service:
 This service recives a Message via RESTful API.
 After that, the messages is stored & sent when its time comes via a http request.
@@ -18,3 +14,7 @@ After that, the messages is stored & sent when its time comes via a http request
 - Solution: "Add this sections to the reademe of the repo."
 - Impact: "Change will only effect the readme file."
 - Testing plan: "No need for testing."
+
+# Related:
+
+- [moqups](https://app.moqups.com/l5FtMh4Pi7L2R7STWPynF3ShjU3UN90E/edit/page/a276610b3)
