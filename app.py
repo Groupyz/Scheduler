@@ -3,6 +3,7 @@ import time
 import schedule
 from flask import Flask
 from views import views_blueprint
+from log.log_handler import init_logger
 
 # Create a Flask app
 app = Flask(__name__)
@@ -19,6 +20,8 @@ if __name__ == '__main__':
     bg_thread = threading.Thread(target=run_scheduler)
     bg_thread.daemon = True
     bg_thread.start()
+
+    init_logger()
 
     # Run the Flask app on localhost with port 5000
     app.run(host='localhost', port=5000)
