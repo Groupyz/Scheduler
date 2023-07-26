@@ -1,10 +1,13 @@
 import schedule
 from flask import Blueprint
+from log.log_handler import log
 
 # Create a Blueprint object
 views_blueprint = Blueprint('views', __name__)
 
+
 @views_blueprint.route('/')
+@log
 def hello():
     print("1 -Hello, World!")
     job_that_executes_once()
