@@ -1,6 +1,7 @@
 import pytest
 from app import app
-from views import job_that_executes_once, TASK_ROUTE
+from views import TASK_ROUTE
+from request_handler import job_that_executes_once
 
 
 @pytest.fixture
