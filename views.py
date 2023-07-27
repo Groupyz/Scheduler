@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from log.log_handler import log
 import request_handler
 
@@ -17,4 +17,4 @@ def hello():
 @views_blueprint.route(TASK_ROUTE, methods=['POST'])
 @log
 def task():
-    return request_handler.post_task()
+    return request_handler.post_task(request)

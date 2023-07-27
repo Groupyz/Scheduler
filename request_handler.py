@@ -1,10 +1,20 @@
 import schedule
+from flask import request, jsonify
+import json
 
 
-def post_task():
-  print("1 -Hello, World!")
-  job_that_executes_once()
-  return 'Post task', 201
+def post_task(request: request):
+  return_data = None
+
+  if not request.is_json:
+    return_data = jsonify({"error": "Invalid request data format. Expected JSON."}), 400
+  else:
+    json_data = jsonify({"test": ""}), 201
+    print("1 -Hello, World!")
+    job_that_executes_once()
+
+  json_data = json.dumps(return_data)
+  return json_data
 
 
 def job_that_executes_once():
@@ -14,3 +24,4 @@ def job_that_executes_once():
 
 def print_me(me: str):
   print(me)
+
