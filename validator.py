@@ -24,5 +24,4 @@ def post_task_has_needed_data(request) -> bool:
       ):
         has_needed_data = False
 
-    print(has_needed_data)
     return has_needed_data

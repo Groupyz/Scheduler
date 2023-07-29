@@ -10,7 +10,6 @@ def post_task(request: request):
   json_data = None
   if post_is_valid(request):
     json_data = jsonify({"message": "Task received successfully"}), 201
-    print("1 -Hello, World!")
     job_that_executes_once()
   else:
     json_data = jsonify({"message": "Invalid request."}), 400
