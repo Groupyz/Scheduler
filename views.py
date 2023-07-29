@@ -1,6 +1,8 @@
-import schedule
-from flask import Blueprint
+from flask import Blueprint, request
 from log.log_handler import log
+import request_handler
+
+TASK_ROUTE = '/task'
 
 # Create a Blueprint object
 views_blueprint = Blueprint('views', __name__)
@@ -9,15 +11,10 @@ views_blueprint = Blueprint('views', __name__)
 @views_blueprint.route('/')
 @log
 def hello():
-    print("1 -Hello, World!")
-    job_that_executes_once()
-    print("2 - Hello, World!")
+    request_handler.job_that_executes_once()
     return 'Hello, World!'
 
-def job_that_executes_once():
-    # Do some work that only needs to happen once...
-    schedule.every(5).seconds.do(print_me, me="me!!!")
-    return schedule.CancelJob
-
-def print_me(me: str):
-  print(me)
+@views_blueprint.route(TASK_ROUTE, methods=['POST'])
+@log
+def task():
+    return request_handler.post_task(request)
