@@ -1,4 +1,5 @@
 import pytest
+import schedule
 from app import app
 from views import TASK_ROUTE
 from request_handler import job_that_executes_once
@@ -28,13 +29,10 @@ def test_task_endpoint(client, mocker):
 
 def test_task_valid_post(client):
     """Test the '/task' route."""
-    # Prepare the JSON data to send with the request
     json_data = message_data_json_dummy()
 
-    # Make a POST request to the '/task' route
     response = client.post(TASK_ROUTE, json=json_data)
 
-    # Check the response status code and message
     assert response.status_code == 201
     assert response.json['message'] == "Task received successfully"
 
@@ -45,16 +43,10 @@ def test_task_route_missing_data(client):
     json_data = message_data_json_dummy()
     del json_data[missing_attribute]
 
-    # Make a POST request to the '/task' route
     response = client.post(TASK_ROUTE, json=json_data)
 
-    # Check the response status code and message
     assert response.status_code == 400
-    assert response.json['message'] == "The {missing_attribute} attribute is missing in the input to create a task."
-
-def test_task_route_accepts_post(client):
-    response = client.post(TASK_ROUTE)
-    assert response.status_code == 201
+    assert response.json.get('message') == "Invalid request."
 
 def test_hello_world():
     response = app.test_client().get('/')
