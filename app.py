@@ -9,13 +9,15 @@ from log.log_handler import init_logger
 app = Flask(__name__)
 app.register_blueprint(views_blueprint)
 
+
 # Function to run the scheduler in a separate thread
 def run_scheduler():
     while True:
         schedule.run_pending()
         time.sleep(1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # Start the background task thread
     bg_thread = threading.Thread(target=run_scheduler)
     bg_thread.daemon = True
@@ -24,4 +26,4 @@ if __name__ == '__main__':
     init_logger()
 
     # Run the Flask app on localhost with port 5000
-    app.run(host='localhost', port=5000)
+    app.run(host="localhost", port=5000)
