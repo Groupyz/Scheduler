@@ -1,6 +1,5 @@
 from scheduler_wrapper import scheduler
 import datetime
-import time
 
 
 from flask import Blueprint, request

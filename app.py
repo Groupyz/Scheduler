@@ -1,6 +1,4 @@
 from scheduler_wrapper import scheduler
-import threading
-import time
 from flask import Flask
 from views import views_blueprint
 from log.log_handler import init_logger

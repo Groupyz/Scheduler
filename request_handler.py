@@ -1,4 +1,3 @@
-from scheduler_wrapper import scheduler
 from flask import request, jsonify
 from validator import validate_pipeline, is_json, post_task_has_needed_data
 
