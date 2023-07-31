@@ -1,3 +1,8 @@
+from scheduler_wrapper import scheduler
+import datetime
+import time
+
+
 from flask import Blueprint, request
 from log.log_handler import log
 import request_handler
@@ -11,7 +16,8 @@ views_blueprint = Blueprint("views", __name__)
 @views_blueprint.route("/")
 @log
 def hello():
-    request_handler.job_that_executes_once()
+    run_time = datetime.datetime.now() + datetime.timedelta(seconds=5)
+    scheduler.add_job(print_hello_world, "date", run_date=run_time)
     return "Hello, World!"
 
 
@@ -19,3 +25,7 @@ def hello():
 @log
 def task():
     return request_handler.post_task(request)
+
+
+def print_hello_world():
+    print("Hello, World!")
