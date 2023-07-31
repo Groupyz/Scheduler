@@ -9,13 +9,6 @@ def client():
         yield client
 
 
-def test_task_endpoint(client, mocker):
-    response = client.post(TASK_ROUTE, json=message_data_json_dummy())
-
-    assert response.status_code == 201
-    assert response.get_json() == {"message": "Task received successfully"}
-
-
 def test_task_valid_post(client):
     """Test the '/task' route."""
     json_data = message_data_json_dummy()
