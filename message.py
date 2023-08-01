@@ -1,8 +1,10 @@
 from datetime import datetime
 from dataclasses import dataclass, fields
+from dataclasses_json import dataclass_json
 from log.log_handler import log
 
 
+@dataclass_json
 @dataclass
 class Message:
     user_id: str

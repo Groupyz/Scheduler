@@ -1,6 +1,10 @@
 import pytest
 from app import app
 from views import TASK_ROUTE
+from test_message import create_datetime
+from log.log_handler import log, init_logger
+
+init_logger()
 
 
 @pytest.fixture
@@ -9,6 +13,7 @@ def client():
         yield client
 
 
+@log
 def test_task_valid_post(client):
     """Test the '/task' route."""
     json_data = message_data_json_dummy()
@@ -37,12 +42,15 @@ def test_hello_world():
     assert response.data == b"Hello, World!"
 
 
+@log
 def message_data_json_dummy(**kwargs) -> dict:
+    date_time_val = create_datetime()
+    formatted_string = date_time_val.strftime("%Y-%m-%d %H:%M:%S")
     dummy_data = {
         "user_id": "342342fsd",
         "group_ids": ["sdfds", "2131fsdf"],
         "message_data": "test data",
-        "time_to_send": "yyyy-MM-dd",
+        "time_to_send": formatted_string,
     }
     dummy_data.update(kwargs)
 
