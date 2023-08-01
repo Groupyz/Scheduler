@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from log.log_handler import log
-import request_handler
+import response_handler
 
 TASK_ROUTE = "/task"
 
@@ -17,4 +17,4 @@ def hello():
 @views_blueprint.route(TASK_ROUTE, methods=["POST"])
 @log
 def task():
-    return request_handler.post_task(request)
+    return response_handler.post_task(request)
