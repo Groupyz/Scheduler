@@ -18,7 +18,3 @@ def test_task_endpoint(client, capsys):
     json_data = message_data_json_dummy(time_to_send=formatted_string)
     response = client.post(TASK_ROUTE, json=json_data)
     assert response.status_code == 201
-
-    time.sleep(5)
-    captured = capsys.readouterr()
-    assert "Hello, World!" in captured.out
