@@ -1,4 +1,3 @@
-import time
 import datetime
 import pytest
 from app import app
