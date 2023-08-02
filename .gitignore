@@ -6,3 +6,4 @@ test/__pycache__/test_routes.cpython-311-pytest-7.4.0.pyc
 __pycache__/
 test/__pycache__/
 /log/logs.log
+.coverage

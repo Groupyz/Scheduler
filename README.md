@@ -26,7 +26,7 @@ python app.py
 # Tests:
 ## Local (CLI):
 ```
-python -m pytest
+python -m pytest --cov --cov-report=term
 ```
 </br></br>
 # Related:
