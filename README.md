@@ -10,6 +10,13 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+## Using Docker:
+```
+docker build -t scheduler .
+```
+```
+docker run -p 5050:5050 --name scheduler scheduler
+```
 
 # PR:
 ## Template:
@@ -24,11 +31,21 @@ python app.py
 - Testing plan: "No need for testing."
 </br></br>
 # Tests:
-## Local (CLI):
+## Local:
 ```
 python -m pytest --cov --cov-report=term
 ```
+## Docker Container:
+```
+ docker exec -it scheduler bash
+```
+```
+python -m pytest --cov --cov-report=term
+```
+
+
 </br></br>
 # Related:
 
 - [moqups](https://app.moqups.com/l5FtMh4Pi7L2R7STWPynF3ShjU3UN90E/edit/page/a276610b3)
+- [postman](https://bold-meteor-59606.postman.co/workspace/Sadna~f1a120ea-5d60-48f1-b482-005e0e219496/collection/17475197-f81b61c9-11ae-42b6-82bc-c9f18bb34ad7)
