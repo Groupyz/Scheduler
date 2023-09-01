@@ -15,7 +15,7 @@ python app.py
 docker build -t scheduler .
 ```
 ```
-docker run -p 5050:5050 --name scheduler scheduler
+docker run -p 5053:5053 --name scheduler scheduler
 ```
 
 # PR:
