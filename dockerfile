@@ -1,6 +1,8 @@
 # Use the official Python image as the base image
 FROM python:3.11.3
 
+ENV BOT_URL='http://bot_api:3001'
+
 # Set the working directory inside the container
 WORKDIR /app
 
