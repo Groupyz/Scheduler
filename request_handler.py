@@ -5,10 +5,10 @@ from message import Message
 
 BOT_URL = os.environ.get("BOT_URL")
 
-BOT_URL_POST_MESSAGE = BOT_URL + '/sendMessage'
+BOT_URL_MSG = BOT_URL + '/sendMessage'
 
 
-def post_message(url: str = BOT_URL, message: Message = None) -> response:
+def post_message(url: str = BOT_URL_MSG, message: Message = None) -> response:
     message_as_json = message.to_json()
     res = requests.post(url, json=message_as_json, timeout=10)
 
