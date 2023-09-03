@@ -11,5 +11,4 @@ app.register_blueprint(views_blueprint)
 if __name__ == "__main__":
     init_logger()
 
-    # Run the Flask app on localhost with port 5000
-    app.run(host="localhost", port=5050)
+    app.run(host="localhost", port=5053)
