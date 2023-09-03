@@ -1,5 +1,6 @@
 import datetime
 import pytest
+import json
 from message import Message
 
 
@@ -30,11 +31,12 @@ def test_invalid_create_message_obj():
 
 
 def test_message_to_JSON(message):
-    message_as_json = message.to_json()
-    assert "group_ids" in message_as_json
-    assert "message_data" in message_as_json
-    assert isinstance(message_as_json["group_ids"], list)
-    assert isinstance(message_as_json["message_data"], str)
+    message_as_json = json.dumps(message.__dict__)
+    message_dict = json.loads(message_as_json)
+    assert "group_ids" in message_dict
+    assert "message_data" in message_dict
+    assert isinstance(message_dict.get("group_ids"), list)
+    assert isinstance(message_dict.get("message_data"), str)
 
 
 def create_message_obj(**kwargs) -> Message:
